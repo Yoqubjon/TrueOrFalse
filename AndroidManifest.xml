@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.LevelSelectionActivity"></activity>
+        <activity android:name=".activities.ResultsActivity"></activity>
     </application>
 
 </manifest>
