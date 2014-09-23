@@ -1,4 +1,9 @@
-package com.svsoftdeveloper.trueorfalse;
+package com.svsoftdeveloper.trueorfalse.activities;
+
+import com.svsoftdeveloper.trueorfalse.R;
+import com.svsoftdeveloper.trueorfalse.R.id;
+import com.svsoftdeveloper.trueorfalse.R.layout;
+import com.svsoftdeveloper.trueorfalse.R.menu;
 
 import android.app.Activity;
 import android.os.Bundle;
