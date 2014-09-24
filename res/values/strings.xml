@@ -15,5 +15,6 @@
     <string name="results_header">Ваш средний результат</string>
     <string name="average_results_default">0,00 %</string>
     <string name="level_results_default">0,00 %</string>
+    <string name="go_to_menu">В меню</string>
 
 </resources>
