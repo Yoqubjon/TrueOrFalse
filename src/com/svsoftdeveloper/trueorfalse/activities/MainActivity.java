@@ -4,9 +4,11 @@ import com.svsoftdeveloper.trueorfalse.R;
 import com.svsoftdeveloper.trueorfalse.R.id;
 import com.svsoftdeveloper.trueorfalse.R.layout;
 import com.svsoftdeveloper.trueorfalse.R.menu;
+import com.svsoftdeveloper.trueorfalse.activities.db.MyDBAdapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,8 +19,11 @@ import android.widget.Button;
 
 public class MainActivity extends Activity implements OnClickListener{
 	
-	Button btnPlay;
-	Button btnResults;
+	private Button btnPlay;
+	private Button btnResults;
+	
+	MyDBAdapter mydatbase;
+	Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,9 @@ public class MainActivity extends Activity implements OnClickListener{
         btnPlay.setOnClickListener(this);
         btnResults = (Button) findViewById(R.id.btnResults);
         btnResults.setOnClickListener(this);
+        
+        mydatbase = new MyDBAdapter(this);
+		mydatbase.open();
     }
 
 
