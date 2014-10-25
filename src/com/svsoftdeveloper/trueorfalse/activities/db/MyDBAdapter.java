@@ -55,20 +55,7 @@ public class MyDBAdapter {
 	private SQLiteDatabase db;
 	private final Context context;
 	
-	//---------File reader------------//
 	
-	
-	public void fillDB(){
-		
-		FileWorker fileWorker = new FileWorker(context);
-		
-		List<Question> resultList = fileWorker.questionLineParser(fileWorker.getQuestionLinesList());
-		
-		for (int k = 0; k < resultList.size(); k++) {
-			addMessageToDB(resultList.get(k));
-        }
-	}
-	//--------------------------------//
 
 	public MyDBAdapter(Context _context) {
 		context = _context;
@@ -103,33 +90,7 @@ public class MyDBAdapter {
 		return mCursor;
 	}
 
-	public long addMessageToDB(Question question) {
-
-		Log.d(TAG, "Begin to add to DB");
-		
-		long result;
-		ContentValues cv = new ContentValues();
-		cv.put(QUESTIONES_TEXT, question.getText());
-		Log.d(TAG, "Text: " + question.getText());
-		cv.put(QUESTIONES_ANSWER, question.getAnswer());
-		Log.d(TAG, "Answer: " + question.getAnswer());
-		cv.put(QUESTIONES_EXPLANATION, question.getExplanation());
-		Log.d(TAG, "Explanation: " + question.getExplanation());
-		cv.put(QUESTIONES_USED, question.getUsed());
-		Log.d(TAG, "Used flag: " + question.getUsed());
-
-		db.beginTransaction();
-		Log.d(TAG, "beginTransaction - done! ");
-	    try {
-	    	Log.d(TAG, " Begin transaction to insert rows");
-	    	result = db.insert(DATABASE_TABLE_QUESTIONES, null, cv);
-	    	Log.d(TAG, " Rows are inserted");
-	      db.setTransactionSuccessful();
-	    } finally {
-	      db.endTransaction();
-	    }
-	    return result;
-	}
+	
 
 	public int getNumberOfMessages() {
 
@@ -153,6 +114,52 @@ public class MyDBAdapter {
 		public MyDBHelper(Context context, String name, CursorFactory factory,
 				int version) {
 			super(context, name, factory, version);
+		}
+		
+		//---------File reader------------//
+		
+		
+		public void fillDB(){
+			
+			FileWorker fileWorker = new FileWorker(context);
+			
+			List<Question> resultList = fileWorker.questionLineParser(fileWorker.getQuestionLinesList());
+			
+			for (int k = 0; k < resultList.size(); k++) {
+				addMessageToDB(resultList.get(k));
+	        }
+		}
+		//--------------------------------//
+		
+		public long addMessageToDB(Question question) {
+			
+			 //SQLiteDatabase db = this.getWritableDatabase();
+
+			Log.d(TAG, "Begin to add to DB");
+			
+			long result;
+			ContentValues cv = new ContentValues();
+			cv.put(QUESTIONES_TEXT, question.getText());
+			Log.d(TAG, "Text: " + question.getText());
+			cv.put(QUESTIONES_ANSWER, question.getAnswer());
+			Log.d(TAG, "Answer: " + question.getAnswer());
+			cv.put(QUESTIONES_EXPLANATION, question.getExplanation());
+			Log.d(TAG, "Explanation: " + question.getExplanation());
+			cv.put(QUESTIONES_USED, question.getUsed());
+			Log.d(TAG, "Used flag: " + question.getUsed());
+
+			//db.beginTransaction();
+			//Log.d(TAG, "beginTransaction - done! ");
+		    //try {
+		    	Log.d(TAG, " Begin transaction to insert rows");
+		    	result = db.insert(DATABASE_TABLE_QUESTIONES, null, cv);
+		    	Log.d(TAG, String.valueOf(result));
+		    	Log.d(TAG, " Rows are inserted");
+		      //db.setTransactionSuccessful();
+		    //} finally {
+		    //  db.endTransaction();
+		    //}
+		    return result;
 		}
 
 		@Override

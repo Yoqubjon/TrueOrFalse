@@ -8,7 +8,9 @@ import com.svsoftdeveloper.trueorfalse.R;
 import com.svsoftdeveloper.trueorfalse.R.id;
 import com.svsoftdeveloper.trueorfalse.R.layout;
 import com.svsoftdeveloper.trueorfalse.R.menu;
+import com.svsoftdeveloper.trueorfalse.activities.db.DatabaseHandler;
 import com.svsoftdeveloper.trueorfalse.activities.db.MyDBAdapter;
+import com.svsoftdeveloper.trueorfalse.activities.db.Question;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -42,11 +44,29 @@ public class MainActivity extends Activity implements OnClickListener{
         btnResults = (Button) findViewById(R.id.btnResults);
         btnResults.setOnClickListener(this);
         
-        Log.d(TAG, "Trying to create mydatbase");
+        /*Log.d(TAG, "Trying to create mydatbase");
         mydatbase = new MyDBAdapter(this);
         Log.d(TAG, "Trying to open mydatbase");
 		mydatbase.open();
-		Log.d(TAG, "Open mydatbase - successful");
+		Log.d(TAG, "Open mydatbase - successful");*/
+        
+		
+		DatabaseHandler db = new DatabaseHandler(this);
+		
+		if(db.getQuestionsCount() < 1){
+			db.fillDB();
+		}
+		Log.d(TAG, Integer.toString(db.getQuestionsCount()));
+		
+		//db.addQuestion(new Question(0, "Проверка занесения в базу", "1", "Правильный ответ", "0"));
+		//db.addQuestion(new Question(1, "Проверка занесения в базу #2", "0", "Правильный ответ #2", "0"));
+        
+		//Question q = db.getQuestion(1);
+		
+		//Log.d(TAG, q.getText());
+		//Log.d(TAG, q.getAnswer());
+		//Log.d(TAG, q.getExplanation());
+		//Log.d(TAG, Integer.toString(db.getQuestionsCount()));
 		
     }
 

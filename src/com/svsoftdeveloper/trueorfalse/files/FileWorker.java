@@ -66,8 +66,6 @@ public class FileWorker{
 		
 		List<Question> result = new ArrayList<Question>();
 		
-		Iterator<String> iterator = list.iterator();
-		
 		for(int i = 0; i < list.size(); i++){
 			String[] array = list.get(i).split("/");
 			if(array.length < 3){
@@ -81,14 +79,6 @@ public class FileWorker{
 				Log.d(TAG, array[0] + " " + array[1] + " " + array[2] + "0");
 			 }
 		}
-		/*while (iterator.hasNext()) {
-			
-			String[] array = iterator.next().split("\\\\");
-			Log.d(TAG, "Size of array: " + array.length);
-			result.add(new Question(0, array[0], array[1], array[2], "0"));
-			 Log.d(TAG, array[0] + " " + array[1] + " " + array[2] + "0");
-			
-		}*/
 		return result;
 	}
 }
