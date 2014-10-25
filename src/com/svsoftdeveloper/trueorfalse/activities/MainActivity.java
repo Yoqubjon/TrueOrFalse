@@ -1,5 +1,9 @@
 package com.svsoftdeveloper.trueorfalse.activities;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.Reader;
+
 import com.svsoftdeveloper.trueorfalse.R;
 import com.svsoftdeveloper.trueorfalse.R.id;
 import com.svsoftdeveloper.trueorfalse.R.layout;
@@ -10,6 +14,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +24,8 @@ import android.widget.Button;
 
 public class MainActivity extends Activity implements OnClickListener{
 	
+	final String TAG = "States";
+	 
 	private Button btnPlay;
 	private Button btnResults;
 	
@@ -35,8 +42,12 @@ public class MainActivity extends Activity implements OnClickListener{
         btnResults = (Button) findViewById(R.id.btnResults);
         btnResults.setOnClickListener(this);
         
+        Log.d(TAG, "Trying to create mydatbase");
         mydatbase = new MyDBAdapter(this);
+        Log.d(TAG, "Trying to open mydatbase");
 		mydatbase.open();
+		Log.d(TAG, "Open mydatbase - successful");
+		
     }
 
 

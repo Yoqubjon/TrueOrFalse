@@ -1,5 +1,10 @@
 package com.svsoftdeveloper.trueorfalse.activities.db;
 
+import java.io.InputStream;
+import java.util.List;
+
+import com.svsoftdeveloper.trueorfalse.files.FileWorker;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -8,11 +13,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.util.Log;
 
 
 public class MyDBAdapter {
 	
-	private static final int DATABASE_VESION = 1;
+	final String TAG = "States";
+	
+	private static final int DATABASE_VESION = 2;
 	private static final String DATABASE_NAME = "trueorfalse.db";
 
 	private static final String DATABASE_TABLE_QUESTIONES = "questions";
@@ -46,6 +54,21 @@ public class MyDBAdapter {
 	private MyDBHelper dBHelper;
 	private SQLiteDatabase db;
 	private final Context context;
+	
+	//---------File reader------------//
+	
+	
+	public void fillDB(){
+		
+		FileWorker fileWorker = new FileWorker(context);
+		
+		List<Question> resultList = fileWorker.questionLineParser(fileWorker.getQuestionLinesList());
+		
+		for (int k = 0; k < resultList.size(); k++) {
+			addMessageToDB(resultList.get(k));
+        }
+	}
+	//--------------------------------//
 
 	public MyDBAdapter(Context _context) {
 		context = _context;
@@ -55,9 +78,12 @@ public class MyDBAdapter {
 	public MyDBAdapter open() throws SQLException {
 
 		try {
+			Log.d(TAG, "Trying to do getWritableDatabase - done!");
 			db = dBHelper.getWritableDatabase();
+			Log.d(TAG, "getWritableDatabase - done!");
 		} catch (SQLiteException e) {
 			db = dBHelper.getReadableDatabase();
+			Log.d(TAG, "getReadableDatabase - done!");
 		}
 		return this;
 	}
@@ -79,16 +105,25 @@ public class MyDBAdapter {
 
 	public long addMessageToDB(Question question) {
 
+		Log.d(TAG, "Begin to add to DB");
+		
 		long result;
 		ContentValues cv = new ContentValues();
 		cv.put(QUESTIONES_TEXT, question.getText());
+		Log.d(TAG, "Text: " + question.getText());
 		cv.put(QUESTIONES_ANSWER, question.getAnswer());
+		Log.d(TAG, "Answer: " + question.getAnswer());
 		cv.put(QUESTIONES_EXPLANATION, question.getExplanation());
+		Log.d(TAG, "Explanation: " + question.getExplanation());
 		cv.put(QUESTIONES_USED, question.getUsed());
+		Log.d(TAG, "Used flag: " + question.getUsed());
 
 		db.beginTransaction();
+		Log.d(TAG, "beginTransaction - done! ");
 	    try {
+	    	Log.d(TAG, " Begin transaction to insert rows");
 	    	result = db.insert(DATABASE_TABLE_QUESTIONES, null, cv);
+	    	Log.d(TAG, " Rows are inserted");
 	      db.setTransactionSuccessful();
 	    } finally {
 	      db.endTransaction();
@@ -125,10 +160,12 @@ public class MyDBAdapter {
 			_db.beginTransaction();
 			try {
 				_db.execSQL(DB_QUESTIONS_TABLE_CREATE);
+				Log.d(TAG, "Table is created");
 				_db.setTransactionSuccessful();
 			} finally {
 				_db.endTransaction();
 			}
+			fillDB();
 		}
 
 		@Override
