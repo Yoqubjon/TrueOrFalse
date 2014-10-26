@@ -25,25 +25,31 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	
 	
 	
-	private static final int DATABASE_VERSION = 8;
+	private static final int DATABASE_VERSION = 1;
 	private static final String DATABASE_NAME = "trueorfalse";
 
 	private static final String TABLE_QUESTIONES = "questions";
 
 	private static final String KEY_QUESTIONES_ID = "_id";
-	//private static final int ID_QUESTIONES_COLUMN = 0;
-
 	public static final String QUESTIONES_TEXT = "text";
-	//private static final int QUESTIONES_TEXT_COLUMN = 1;
-
 	public static final String QUESTIONES_ANSWER = "answer";
-	//private static final int QUESTIONES_ANSWER_COLUMN = 2;
-
 	public static final String QUESTIONES_EXPLANATION = "explanation";
-	//public static final int QUESTIONES_EXPLANATION_COLUMN = 3;
-	
 	public static final String QUESTIONES_USED = "used";
-	//public static final int QUESTIONES_USED_COLUMN = 4;
+	
+	private static final String TABLE_STATISTICS = "statistics";
+
+	private static final String KEY_STATISTICS_ID = "_id";
+	public static final String STATISTICS_1L_PERCENTS = "level1stat"; // REAL
+	public static final String STATISTICS_2L_PERCENTS = "level2stat";
+	public static final String STATISTICS_3L_PERCENTS = "level3stat";
+	public static final String STATISTICS_4L_PERCENTS = "level4stat";
+	public static final String STATISTICS_5L_PERCENTS = "level5stat";
+	public static final String STATISTICS_1L_DONE = "level1done";
+	public static final String STATISTICS_2L_DONE = "level2done";
+	public static final String STATISTICS_3L_DONE = "level3done";
+	public static final String STATISTICS_4L_DONE = "level4done";
+	public static final String STATISTICS_5L_DONE = "level5done";
+	
 	
 	private static final String DB_QUESTIONS_TABLE_CREATE = "create table "
 			+ TABLE_QUESTIONES + " ( " 
@@ -52,6 +58,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 			+ QUESTIONES_ANSWER + " integer, "
 			+ QUESTIONES_EXPLANATION + " text, " 
 			+ QUESTIONES_USED + " integer" + ");";
+	
+	private static final String DB_STATISTICS_TABLE_CREATE = "create table "
+			+ TABLE_STATISTICS + " ( " 
+			+ KEY_STATISTICS_ID + " integer primary key autoincrement, "
+			+ STATISTICS_1L_PERCENTS + " REAL, "
+			+ STATISTICS_2L_PERCENTS + " REAL, "
+			+ STATISTICS_3L_PERCENTS + " REAL, "
+			+ STATISTICS_4L_PERCENTS + " REAL, "
+			+ STATISTICS_5L_PERCENTS + " REAL, "
+			+ STATISTICS_1L_DONE + " integer, "
+			+ STATISTICS_2L_DONE + " integer, "
+			+ STATISTICS_3L_DONE + " integer, "
+			+ STATISTICS_4L_DONE + " integer, "
+			+ STATISTICS_5L_DONE + " integer" + ");";
 	
 	
     
@@ -69,6 +89,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(DB_QUESTIONS_TABLE_CREATE);
+        db.execSQL(DB_STATISTICS_TABLE_CREATE);
 
     } 
   
@@ -77,7 +98,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed 
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_QUESTIONES);
-  
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_STATISTICS);
         // Create tables again 
         onCreate(db);
     } 
@@ -151,6 +172,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
   	       }
   	}
   		//--------------------------------//
+  	
+  	public void fillStatisticsTable(){
+  		
+  		Statistics statistics = new Statistics(1, 0L, 0L, 0L, 0L, 0L, 0, 0, 0, 0, 0);
+  		addStatistics(statistics);
+  	}
   	
   	
   	
@@ -251,5 +278,79 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // return count 
         return count;
     } 
+    
+    //================================================================================================================//
+    
+ // Adding new contact 
+    public void addStatistics(Statistics statistics) {
+    	
+        SQLiteDatabase db = this.getWritableDatabase();
+  
+        ContentValues values = new ContentValues();
+        values.put(STATISTICS_1L_PERCENTS, statistics.getL1Percents());
+        values.put(STATISTICS_2L_PERCENTS, statistics.getL2Percents());
+        values.put(STATISTICS_3L_PERCENTS, statistics.getL3Percents());
+        values.put(STATISTICS_4L_PERCENTS, statistics.getL4Percents());
+        values.put(STATISTICS_5L_PERCENTS, statistics.getL5Percents());
+		values.put(STATISTICS_1L_DONE, statistics.getL1Done());
+		values.put(STATISTICS_2L_DONE, statistics.getL2Done());
+		values.put(STATISTICS_3L_DONE, statistics.getL3Done());
+		values.put(STATISTICS_4L_DONE, statistics.getL4Done());
+		values.put(STATISTICS_5L_DONE, statistics.getL5Done());
+  
+        // Inserting Row 
+        db.insert(TABLE_STATISTICS, null, values);
+        db.close(); // Closing database connection
+    }
+    
+ // Getting single statistic 
+    public Statistics getStatistics(int id) {
+    	
+        SQLiteDatabase db = this.getReadableDatabase();
+  
+        Cursor cursor = db.query(TABLE_STATISTICS, new String[] { KEY_STATISTICS_ID,
+        		STATISTICS_1L_PERCENTS, STATISTICS_2L_PERCENTS,  STATISTICS_3L_PERCENTS, STATISTICS_4L_PERCENTS, STATISTICS_5L_PERCENTS, STATISTICS_1L_DONE, STATISTICS_2L_DONE, STATISTICS_3L_DONE, STATISTICS_4L_DONE, STATISTICS_5L_DONE}, KEY_STATISTICS_ID + "=?",
+                new String[] { String.valueOf(id) }, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+  
+        Statistics statistics = new Statistics(Integer.parseInt(cursor.getString(0)), cursor.getFloat(1), cursor.getFloat(2), cursor.getFloat(3), cursor.getFloat(4), cursor.getFloat(5), cursor.getInt(6), cursor.getInt(7), cursor.getInt(8), cursor.getInt(9), cursor.getInt(10));
+        // return 
+        return statistics;
+    }
+    
+    // Updating single statistic 
+    public int updateStatistics(Statistics statistics) {
+        SQLiteDatabase db = this.getWritableDatabase();
+  
+        ContentValues values = new ContentValues();
+        values.put(STATISTICS_1L_PERCENTS, statistics.getL1Percents());
+        values.put(STATISTICS_2L_PERCENTS, statistics.getL2Percents());
+        values.put(STATISTICS_3L_PERCENTS, statistics.getL3Percents());
+        values.put(STATISTICS_4L_PERCENTS, statistics.getL4Percents());
+        values.put(STATISTICS_5L_PERCENTS, statistics.getL5Percents());
+        values.put(STATISTICS_1L_DONE, statistics.getL1Done());
+        values.put(STATISTICS_2L_DONE, statistics.getL2Done());
+        values.put(STATISTICS_3L_DONE, statistics.getL3Done());
+        values.put(STATISTICS_4L_DONE, statistics.getL4Done());
+        values.put(STATISTICS_5L_DONE, statistics.getL5Done());
+  
+        // updating row 
+        return db.update(TABLE_STATISTICS, values, KEY_STATISTICS_ID + " = ?", new String[] { String.valueOf(statistics.getId())});
+    } 
+    
+    // Getting statistic Count 
+    public int getStatisticsCount() {
+    	
+        String countQuery = "SELECT * FROM " + TABLE_STATISTICS;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+  
+        // return count 
+        return count;
+    }
+    
   
 }

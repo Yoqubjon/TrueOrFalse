@@ -11,6 +11,7 @@ import com.svsoftdeveloper.trueorfalse.R.menu;
 import com.svsoftdeveloper.trueorfalse.activities.db.DatabaseHandler;
 import com.svsoftdeveloper.trueorfalse.activities.db.MyDBAdapter;
 import com.svsoftdeveloper.trueorfalse.activities.db.Question;
+import com.svsoftdeveloper.trueorfalse.activities.db.Statistics;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -58,6 +59,11 @@ public class MainActivity extends Activity implements OnClickListener{
 		}
 		Log.d(TAG, Integer.toString(db.getQuestionsCount()));
 		
+		if(db.getStatisticsCount() < 1){
+			db.fillStatisticsTable();
+		}
+		Log.d(TAG, Integer.toString(db.getStatisticsCount()));
+		
 		//db.addQuestion(new Question(0, "Проверка занесения в базу", "1", "Правильный ответ", "0"));
 		//db.addQuestion(new Question(1, "Проверка занесения в базу #2", "0", "Правильный ответ #2", "0"));
         
@@ -67,6 +73,20 @@ public class MainActivity extends Activity implements OnClickListener{
 		//Log.d(TAG, q.getAnswer());
 		//Log.d(TAG, q.getExplanation());
 		//Log.d(TAG, Integer.toString(db.getQuestionsCount()));
+		
+		Statistics q = db.getStatistics(1);
+		
+		Log.d(TAG, String.valueOf(q.getL1Percents()));
+		Log.d(TAG, String.valueOf(q.getL2Percents()));
+		Log.d(TAG, String.valueOf(q.getL3Percents()));
+		Log.d(TAG, String.valueOf(q.getL4Percents()));
+		Log.d(TAG, String.valueOf(q.getL5Percents()));
+
+		Log.d(TAG, String.valueOf(q.getL1Done()));
+		Log.d(TAG, String.valueOf(q.getL2Done()));
+		Log.d(TAG, String.valueOf(q.getL3Done()));
+		Log.d(TAG, String.valueOf(q.getL4Done()));
+		Log.d(TAG, String.valueOf(q.getL5Done()));
 		
     }
 
