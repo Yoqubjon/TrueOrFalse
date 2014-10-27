@@ -57,7 +57,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/txtlevel1mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Level_word" />
@@ -72,7 +72,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/txtlevel1number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1" />
@@ -87,7 +87,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/txtLevel1percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/level_results_default" />
@@ -118,7 +118,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView02"
+                    android:id="@+id/txtlevel2mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Level_word" />
@@ -132,7 +132,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView01"
+                    android:id="@+id/txtlevel2number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2" />
@@ -146,7 +146,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView03"
+                    android:id="@+id/txtLevel2percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/level_results_default" />
@@ -175,7 +175,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView05"
+                    android:id="@+id/txtlevel3mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Level_word" />
@@ -189,7 +189,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView06"
+                    android:id="@+id/txtlevel3number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3" />
@@ -203,7 +203,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView04"
+                    android:id="@+id/txtLevel3percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/level_results_default" />
@@ -232,7 +232,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView09"
+                    android:id="@+id/txtlevel4mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Level_word" />
@@ -246,7 +246,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView08"
+                    android:id="@+id/txtlevel4number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4" />
@@ -260,7 +260,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView07"
+                    android:id="@+id/txtLevel4percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/level_results_default" />
@@ -289,7 +289,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView12"
+                    android:id="@+id/txtlevel5mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Level_word" />
@@ -303,7 +303,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView10"
+                    android:id="@+id/txtlevel5number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5" />
@@ -317,7 +317,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/TextView11"
+                    android:id="@+id/txtLevel5percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/level_results_default" />

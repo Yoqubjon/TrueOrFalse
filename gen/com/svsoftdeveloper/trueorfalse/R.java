@@ -38,18 +38,6 @@ public final class R {
         public static final int LinearLayout=0x7f0a0000;
         public static final int LinearLayout2=0x7f0a0007;
         public static final int RelativeLayout1=0x7f0a0006;
-        public static final int TextView01=0x7f0a0011;
-        public static final int TextView02=0x7f0a0010;
-        public static final int TextView03=0x7f0a0012;
-        public static final int TextView04=0x7f0a0015;
-        public static final int TextView05=0x7f0a0013;
-        public static final int TextView06=0x7f0a0014;
-        public static final int TextView07=0x7f0a0018;
-        public static final int TextView08=0x7f0a0017;
-        public static final int TextView09=0x7f0a0016;
-        public static final int TextView10=0x7f0a001a;
-        public static final int TextView11=0x7f0a001b;
-        public static final int TextView12=0x7f0a0019;
         public static final int action_settings=0x7f0a001f;
         public static final int btnAvailableLevel=0x7f0a001c;
         public static final int btnGoToMenu=0x7f0a001e;
@@ -62,11 +50,23 @@ public final class R {
         public static final int btnPlay=0x7f0a0009;
         public static final int btnResults=0x7f0a000a;
         public static final int imageView1=0x7f0a0008;
-        public static final int textView1=0x7f0a000d;
-        public static final int textView2=0x7f0a000e;
-        public static final int textView3=0x7f0a000f;
         public static final int txtAverageResult=0x7f0a000c;
+        public static final int txtLevel1percentage=0x7f0a000f;
+        public static final int txtLevel2percentage=0x7f0a0012;
+        public static final int txtLevel3percentage=0x7f0a0015;
+        public static final int txtLevel4percentage=0x7f0a0018;
+        public static final int txtLevel5percentage=0x7f0a001b;
         public static final int txtResultsHeader=0x7f0a000b;
+        public static final int txtlevel1mark=0x7f0a000d;
+        public static final int txtlevel1number=0x7f0a000e;
+        public static final int txtlevel2mark=0x7f0a0010;
+        public static final int txtlevel2number=0x7f0a0011;
+        public static final int txtlevel3mark=0x7f0a0013;
+        public static final int txtlevel3number=0x7f0a0014;
+        public static final int txtlevel4mark=0x7f0a0016;
+        public static final int txtlevel4number=0x7f0a0017;
+        public static final int txtlevel5mark=0x7f0a0019;
+        public static final int txtlevel5number=0x7f0a001a;
     }
     public static final class layout {
         public static final int activity_game=0x7f030000;

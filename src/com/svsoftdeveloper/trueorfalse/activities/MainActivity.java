@@ -27,13 +27,16 @@ import android.widget.Button;
 
 public class MainActivity extends Activity implements OnClickListener{
 	
+	
 	final String TAG = "States";
 	 
 	private Button btnPlay;
 	private Button btnResults;
 	
-	MyDBAdapter mydatbase;
-	Cursor cursor;
+	//MyDBAdapter mydatbase;
+	//Cursor cursor;
+	
+	Statistics statistics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,19 +77,19 @@ public class MainActivity extends Activity implements OnClickListener{
 		//Log.d(TAG, q.getExplanation());
 		//Log.d(TAG, Integer.toString(db.getQuestionsCount()));
 		
-		Statistics q = db.getStatistics(1);
+		statistics = db.getStatistics(1);
 		
-		Log.d(TAG, String.valueOf(q.getL1Percents()));
-		Log.d(TAG, String.valueOf(q.getL2Percents()));
-		Log.d(TAG, String.valueOf(q.getL3Percents()));
-		Log.d(TAG, String.valueOf(q.getL4Percents()));
-		Log.d(TAG, String.valueOf(q.getL5Percents()));
+		Log.d(TAG, String.valueOf(statistics.getL1Percents()));
+		Log.d(TAG, String.valueOf(statistics.getL2Percents()));
+		Log.d(TAG, String.valueOf(statistics.getL3Percents()));
+		Log.d(TAG, String.valueOf(statistics.getL4Percents()));
+		Log.d(TAG, String.valueOf(statistics.getL5Percents()));
 
-		Log.d(TAG, String.valueOf(q.getL1Done()));
-		Log.d(TAG, String.valueOf(q.getL2Done()));
-		Log.d(TAG, String.valueOf(q.getL3Done()));
-		Log.d(TAG, String.valueOf(q.getL4Done()));
-		Log.d(TAG, String.valueOf(q.getL5Done()));
+		Log.d(TAG, String.valueOf(statistics.getL1Done()));
+		Log.d(TAG, String.valueOf(statistics.getL2Done()));
+		Log.d(TAG, String.valueOf(statistics.getL3Done()));
+		Log.d(TAG, String.valueOf(statistics.getL4Done()));
+		Log.d(TAG, String.valueOf(statistics.getL5Done()));
 		
     }
 
@@ -124,6 +127,7 @@ public class MainActivity extends Activity implements OnClickListener{
 	    case R.id.btnResults:
 	    	// TODO Call second activity
 	    	intent = new Intent(this, ResultsActivity.class);
+	    	intent.putExtra(ResultsActivity.EXTRA_STATISTICS, statistics);
 	    	startActivity(intent);
 	    	break;  
 	    default:

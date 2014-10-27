@@ -1,7 +1,12 @@
 package com.svsoftdeveloper.trueorfalse.activities.db;
 
-public class Statistics {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Statistics implements Parcelable{
 	
+	public static final Creator<Statistics> CREATOR = new StatisticsCreator();
+
 	private int id;
 	
 	private float l1Percents;
@@ -119,6 +124,113 @@ public class Statistics {
 
 	public void setL5Done(int l5Done) {
 		this.l5Done = l5Done;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		result = prime * result + l1Done;
+		result = prime * result + Float.floatToIntBits(l1Percents);
+		result = prime * result + l2Done;
+		result = prime * result + Float.floatToIntBits(l2Percents);
+		result = prime * result + l3Done;
+		result = prime * result + Float.floatToIntBits(l3Percents);
+		result = prime * result + l4Done;
+		result = prime * result + Float.floatToIntBits(l4Percents);
+		result = prime * result + l5Done;
+		result = prime * result + Float.floatToIntBits(l5Percents);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Statistics other = (Statistics) obj;
+		if (id != other.id)
+			return false;
+		if (l1Done != other.l1Done)
+			return false;
+		if (Float.floatToIntBits(l1Percents) != Float
+				.floatToIntBits(other.l1Percents))
+			return false;
+		if (l2Done != other.l2Done)
+			return false;
+		if (Float.floatToIntBits(l2Percents) != Float
+				.floatToIntBits(other.l2Percents))
+			return false;
+		if (l3Done != other.l3Done)
+			return false;
+		if (Float.floatToIntBits(l3Percents) != Float
+				.floatToIntBits(other.l3Percents))
+			return false;
+		if (l4Done != other.l4Done)
+			return false;
+		if (Float.floatToIntBits(l4Percents) != Float
+				.floatToIntBits(other.l4Percents))
+			return false;
+		if (l5Done != other.l5Done)
+			return false;
+		if (Float.floatToIntBits(l5Percents) != Float
+				.floatToIntBits(other.l5Percents))
+			return false;
+		return true;
+	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		// TODO Auto-generated method stub
+		dest.writeInt(id);
+		dest.writeFloat(l1Percents);
+		dest.writeFloat(l2Percents);
+		dest.writeFloat(l3Percents);
+		dest.writeFloat(l4Percents);
+		dest.writeFloat(l5Percents);
+		dest.writeInt(l1Done);
+		dest.writeInt(l2Done);
+		dest.writeInt(l3Done);
+		dest.writeInt(l4Done);
+		dest.writeInt(l5Done);
+	}
+	
+	private static class StatisticsCreator implements Creator<Statistics>{
+
+		@Override
+		public Statistics createFromParcel(Parcel source) {
+			// TODO Auto-generated method stub
+			int id = source.readInt();
+			float l1Percents = source.readFloat();
+			float l2Percents = source.readFloat();
+			float l3Percents = source.readFloat();
+			float l4Percents = source.readFloat();
+			float l5Percents = source.readFloat();
+			int l1Done = source.readInt();
+			int l2Done = source.readInt();
+			int l3Done = source.readInt();
+			int l4Done = source.readInt();
+			int l5Done = source.readInt();
+			
+			return new Statistics(id, l1Percents, l2Percents, l3Percents, l4Percents, l5Percents, l1Done, l2Done, l3Done, l4Done, l5Done);
+		}
+
+		@Override
+		public Statistics[] newArray(int size) {
+			// TODO Auto-generated method stub
+			return new Statistics[size];
+		}
+		
 	}
 	
 }
