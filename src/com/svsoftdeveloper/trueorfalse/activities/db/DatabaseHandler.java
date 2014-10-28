@@ -175,7 +175,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
   	
   	public void fillStatisticsTable(){
   		
-  		Statistics statistics = new Statistics(1, 70.8f, 85.3f, 40.8f, 90.5f, 60.4f, 0, 0, 0, 0, 0);
+  		Statistics statistics = new Statistics(1, 70.8f, 85.3f, 0.0f, 0.0f, 0.0f, 1, 1, 0, 0, 0);
   		addStatistics(statistics);
   	}
   	
@@ -227,6 +227,27 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         List<Question> questionList = new ArrayList<Question>();
         // Select All Query 
         String selectQuery = "SELECT * FROM " + TABLE_QUESTIONES;
+  
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+  
+        // looping through all rows and adding to list 
+        if (cursor.moveToFirst()) {
+            do { 
+            	Question question = new Question(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+                // Adding contact to list 
+            	questionList.add(question);
+            } while (cursor.moveToNext());
+        } 
+        // return contact list 
+        return questionList;
+    } 
+    
+ // Getting new Questions 
+    public List<Question> getNewQuestions() {
+        List<Question> questionList = new ArrayList<Question>();
+        // Select All Query 
+        String selectQuery = "SELECT * FROM " + TABLE_QUESTIONES + " WHERE "  + QUESTIONES_USED + " = " + 0;
   
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

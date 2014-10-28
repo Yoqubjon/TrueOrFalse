@@ -39,13 +39,13 @@ public class ResultsActivity extends Activity {
         
         statistics = getIntent().getParcelableExtra(EXTRA_STATISTICS);
         
-        txtLevel1percentage.setText(Float.toString(statistics.getL1Percents()));
-        txtLevel2percentage.setText(Float.toString(statistics.getL2Percents()));
-        txtLevel3percentage.setText(Float.toString(statistics.getL3Percents()));
-        txtLevel4percentage.setText(Float.toString(statistics.getL4Percents()));
-        txtLevel5percentage.setText(Float.toString(statistics.getL5Percents()));
+        txtLevel1percentage.setText(Float.toString(statistics.getL1Percents()) + " %");
+        txtLevel2percentage.setText(Float.toString(statistics.getL2Percents()) + " %");
+        txtLevel3percentage.setText(Float.toString(statistics.getL3Percents()) + " %");
+        txtLevel4percentage.setText(Float.toString(statistics.getL4Percents()) + " %");
+        txtLevel5percentage.setText(Float.toString(statistics.getL5Percents()) + " %");
         
-        txtAverageResult.setText(Float.toString((Math.round(10*((statistics.getL1Percents() + statistics.getL2Percents() + statistics.getL3Percents() + statistics.getL4Percents() + statistics.getL5Percents())/5)))/10.0f));
+        txtAverageResult.setText(Float.toString((Math.round(10*((statistics.getL1Percents() + statistics.getL2Percents() + statistics.getL3Percents() + statistics.getL4Percents() + statistics.getL5Percents())/5)))/10.0f) + " %");
         
         
     }

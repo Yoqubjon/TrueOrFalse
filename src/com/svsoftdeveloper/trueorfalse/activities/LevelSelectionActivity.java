@@ -1,6 +1,8 @@
 package com.svsoftdeveloper.trueorfalse.activities;
 
 import com.svsoftdeveloper.trueorfalse.R;
+import com.svsoftdeveloper.trueorfalse.activities.db.DatabaseHandler;
+import com.svsoftdeveloper.trueorfalse.activities.db.Statistics;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +12,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class LevelSelectionActivity extends Activity implements OnClickListener{
+	
+	public static final String EXTRA_STATISTICS = "statistics";
+	
+	public DatabaseHandler db;
+	public Statistics statistics;
 	
 	Button btnLevel1;
 	Button btnLevel2;
@@ -36,36 +43,72 @@ public class LevelSelectionActivity extends Activity implements OnClickListener{
 	        
 	        btnLevel5 = (Button) findViewById(R.id.btnLevel5);
 	        btnLevel5.setOnClickListener(this);
+	        
+	        db = new DatabaseHandler(this);
+	        
+	        statistics = db.getStatistics(1);
+	        
+	        btnLevel1.setEnabled(true);
+	        
+	        if(statistics.getL1Done() != 0){
+	        	btnLevel2.setEnabled(true);
+	        }
+	        else{
+	        	btnLevel2.setEnabled(false);
+	        }
+	        
+	        if(statistics.getL2Done() != 0){
+	        	btnLevel3.setEnabled(true);
+	        }
+	        else{
+	        	btnLevel3.setEnabled(false);
+	        }
+	        
+	        if(statistics.getL3Done() != 0){
+	        	btnLevel4.setEnabled(true);
+	        }
+	        else{
+	        	btnLevel4.setEnabled(false);
+	        }
+	        
+	        if(statistics.getL4Done() != 0){
+	        	btnLevel5.setEnabled(true);
+	        }
+	        else{
+	        	btnLevel5.setEnabled(false);
+	        }
 	    }
+	 
+	 
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		Intent intent;
+		Intent intent  = new Intent(this, GameActivity.class);
 		switch (v.getId()) {
 	    case R.id.btnLevel1:
-	      // TODO Call second activity
-	    	intent = new Intent(this, GameActivity.class);
+	      // TODO Call second activity   	
+	        intent.putExtra("levelnumber", 1);	    	
 	        startActivity(intent);
 	        break;
 	    case R.id.btnLevel2:
 	    	// TODO Call second activity
-	    	intent = new Intent(this, GameActivity.class);
+	    	intent.putExtra("levelnumber", 2);
 	    	startActivity(intent);
 	    	break;  
 	    case R.id.btnLevel3:
 	    	// TODO Call second activity
-	    	intent = new Intent(this, GameActivity.class);
+	    	intent.putExtra("levelnumber", 3);
 	    	startActivity(intent);
 	    	break;
 	    case R.id.btnLevel4:
 	    	// TODO Call second activity
-	    	intent = new Intent(this, GameActivity.class);
+	    	intent.putExtra("levelnumber", 4);
 	    	startActivity(intent);
 	    	break;
 	    case R.id.btnLevel5:
 	    	// TODO Call second activity
-	    	intent = new Intent(this, GameActivity.class);
+	    	intent.putExtra("levelnumber", 5);
 	    	startActivity(intent);
 	    	break;
 	    default:
