@@ -16,5 +16,11 @@
     <string name="average_results_default">0,00 %</string>
     <string name="level_results_default">0,00 %</string>
     <string name="go_to_menu">В меню</string>
+    <string name="false_button">Ложь</string>
+    <string name="truth_button">Правда</string>
+    <string name="next_button">Следующий</string>
+    <string name="your_result">Ваш результат</string>
+    <string name="number_of_correct_answers">"Правильных ответов: "</string>
+    <string name="result_percents">Правильных ответов: 0.0 %</string>
 
 </resources>

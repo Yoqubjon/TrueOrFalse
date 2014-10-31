@@ -37,44 +37,49 @@ public final class R {
         public static final int truefalselogo_m=0x7f020006;
     }
     public static final class id {
-        public static final int LinearLayout=0x7f0a0007;
-        public static final int LinearLayout2=0x7f0a000e;
-        public static final int RelativeLayout1=0x7f0a000d;
-        public static final int action_settings=0x7f0a0025;
-        public static final int btnAvailableLevel=0x7f0a0022;
-        public static final int btnGoToMenu=0x7f0a0024;
-        public static final int btnGoToResults=0x7f0a0023;
-        public static final int btnLevel1=0x7f0a0008;
-        public static final int btnLevel2=0x7f0a0009;
-        public static final int btnLevel3=0x7f0a000a;
-        public static final int btnLevel4=0x7f0a000b;
-        public static final int btnLevel5=0x7f0a000c;
-        public static final int btnPlay=0x7f0a000f;
-        public static final int btnResults=0x7f0a0010;
+        public static final int LinearLayout=0x7f0a0008;
+        public static final int LinearLayout2=0x7f0a000f;
+        public static final int RelativeLayout1=0x7f0a000e;
+        public static final int action_settings=0x7f0a002a;
+        public static final int btnAvailableLevel=0x7f0a0024;
+        public static final int btnFalse=0x7f0a0028;
+        public static final int btnGoToMenu=0x7f0a0026;
+        public static final int btnGoToResults=0x7f0a0025;
+        public static final int btnLevel1=0x7f0a0009;
+        public static final int btnLevel2=0x7f0a000a;
+        public static final int btnLevel3=0x7f0a000b;
+        public static final int btnLevel4=0x7f0a000c;
+        public static final int btnLevel5=0x7f0a000d;
+        public static final int btnNext=0x7f0a0027;
+        public static final int btnPlay=0x7f0a0010;
+        public static final int btnResults=0x7f0a0011;
+        public static final int btnTruth=0x7f0a0029;
+        public static final int frgmCont=0x7f0a0007;
         public static final int imageView1=0x7f0a0000;
         public static final int imageView2=0x7f0a0004;
-        public static final int textView1=0x7f0a0001;
-        public static final int textView2=0x7f0a0002;
-        public static final int textView3=0x7f0a0003;
-        public static final int textView4=0x7f0a0005;
-        public static final int textView5=0x7f0a0006;
-        public static final int txtAverageResult=0x7f0a0012;
-        public static final int txtLevel1percentage=0x7f0a0015;
-        public static final int txtLevel2percentage=0x7f0a0018;
-        public static final int txtLevel3percentage=0x7f0a001b;
-        public static final int txtLevel4percentage=0x7f0a001e;
-        public static final int txtLevel5percentage=0x7f0a0021;
-        public static final int txtResultsHeader=0x7f0a0011;
-        public static final int txtlevel1mark=0x7f0a0013;
-        public static final int txtlevel1number=0x7f0a0014;
-        public static final int txtlevel2mark=0x7f0a0016;
-        public static final int txtlevel2number=0x7f0a0017;
-        public static final int txtlevel3mark=0x7f0a0019;
-        public static final int txtlevel3number=0x7f0a001a;
-        public static final int txtlevel4mark=0x7f0a001c;
-        public static final int txtlevel4number=0x7f0a001d;
-        public static final int txtlevel5mark=0x7f0a001f;
-        public static final int txtlevel5number=0x7f0a0020;
+        public static final int textViewAnswerTitle=0x7f0a0002;
+        public static final int textViewCorrect=0x7f0a0001;
+        public static final int textViewExplanationText=0x7f0a0006;
+        public static final int textViewExplanationTitle=0x7f0a0005;
+        public static final int textViewResultPercents=0x7f0a0023;
+        public static final int textViewWrong=0x7f0a0003;
+        public static final int txtAverageResult=0x7f0a0013;
+        public static final int txtLevel1percentage=0x7f0a0016;
+        public static final int txtLevel2percentage=0x7f0a0019;
+        public static final int txtLevel3percentage=0x7f0a001c;
+        public static final int txtLevel4percentage=0x7f0a001f;
+        public static final int txtLevel5percentage=0x7f0a0022;
+        public static final int txtResultsHeader=0x7f0a0012;
+        public static final int txtlevel1mark=0x7f0a0014;
+        public static final int txtlevel1number=0x7f0a0015;
+        public static final int txtlevel2mark=0x7f0a0017;
+        public static final int txtlevel2number=0x7f0a0018;
+        public static final int txtlevel3mark=0x7f0a001a;
+        public static final int txtlevel3number=0x7f0a001b;
+        public static final int txtlevel4mark=0x7f0a001d;
+        public static final int txtlevel4number=0x7f0a001e;
+        public static final int txtlevel5mark=0x7f0a0020;
+        public static final int txtlevel5number=0x7f0a0021;
     }
     public static final class layout {
         public static final int activity_game=0x7f030000;
@@ -82,6 +87,8 @@ public final class R {
         public static final int activity_main=0x7f030002;
         public static final int activity_myresults=0x7f030003;
         public static final int activity_postgameresult=0x7f030004;
+        public static final int fragment_next_button=0x7f030005;
+        public static final int fragment_yesno_buttons=0x7f030006;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -101,10 +108,16 @@ public final class R {
         public static final int action_settings=0x7f070002;
         public static final int app_name=0x7f070000;
         public static final int average_results_default=0x7f07000c;
+        public static final int false_button=0x7f07000f;
         public static final int go_to_menu=0x7f07000e;
         public static final int hello_world=0x7f070001;
         public static final int level_results_default=0x7f07000d;
+        public static final int next_button=0x7f070011;
+        public static final int number_of_correct_answers=0x7f070013;
+        public static final int result_percents=0x7f070014;
         public static final int results_header=0x7f07000b;
+        public static final int truth_button=0x7f070010;
+        public static final int your_result=0x7f070012;
     }
     public static final class style {
         /** 

@@ -33,7 +33,7 @@
             android:id="@+id/txtlevel1mark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/your_result" />
 
     </LinearLayout>
 
@@ -43,6 +43,22 @@
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
+
+            <TextView
+                android:id="@+id/textViewResultPercents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/result_percents" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -55,7 +71,7 @@
 
         <Button
             android:id="@+id/btnAvailableLevel"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:text="@string/Level_1" />
 
@@ -70,7 +86,7 @@
 
         <Button
             android:id="@+id/btnGoToResults"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:text="@string/Results" />
 
@@ -85,7 +101,7 @@
 
         <Button
             android:id="@+id/btnGoToMenu"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:text="@string/go_to_menu" />
 
