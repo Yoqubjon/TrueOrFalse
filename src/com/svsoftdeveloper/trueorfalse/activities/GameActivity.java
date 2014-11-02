@@ -30,6 +30,8 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 	private static final int NUMBER_OF_QUESTIONS_LEVEL_4 = 6;
 	private static final int NUMBER_OF_QUESTIONS_LEVEL_5 = 7;
 	
+	private static final float LEVEL_ACCEPTANCE_PERCENTAGE = 70.0f;
+	
 	private static final int[] NUMBER_OF_QUESTIONS_IN_LEVEL = {3, 4, 5, 6, 7};
 	
 	private int numberCorrectAnswers;
@@ -78,7 +80,7 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
         fTrans.commit();
         
         Intent intent = getIntent();      
-        levelnumber = (intent.getIntExtra("levelnumber", 1)) - 1;        
+        levelnumber = (intent.getIntExtra("levelnumber", 1));        
         //Toast.makeText(this, "Level number: " + Integer.toString(levelnumber), Toast.LENGTH_SHORT).show();
         
         numberCorrectAnswers = 0;
@@ -203,6 +205,44 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 	    	}
 	    	else{
 	    		levelPercentage = ((float) numberCorrectAnswers/(numberCorrectAnswers + numberWrongAnswers)) * 100;
+	    		
+	    		if(levelPercentage >= LEVEL_ACCEPTANCE_PERCENTAGE){
+	    			
+	    			if(levelnumber == 0){
+	    				statistics.setL1Done(1);
+	    				if(levelPercentage > statistics.getL1Percents()){
+	    					statistics.setL1Percents(levelPercentage);
+	    				}
+	    			}
+	    			else if(levelnumber == 1){
+	    				statistics.setL2Done(1);
+	    				if(levelPercentage > statistics.getL2Percents()){
+	    					statistics.setL2Percents(levelPercentage);
+	    				}
+	    			}
+	    			else if(levelnumber == 2){
+	    				statistics.setL3Done(1);
+	    				if(levelPercentage > statistics.getL3Percents()){
+	    					statistics.setL3Percents(levelPercentage);
+	    				}
+	    			}
+	    			else if(levelnumber == 3){
+	    				statistics.setL4Done(1);
+	    				if(levelPercentage > statistics.getL4Percents()){
+	    					statistics.setL4Percents(levelPercentage);
+	    				}
+	    			}
+	    			else if(levelnumber == 4){
+	    				statistics.setL5Done(1);
+	    				if(levelPercentage > statistics.getL5Percents()){
+	    					statistics.setL5Percents(levelPercentage);
+	    				}
+	    			}
+	    			db.updateStatistics(statistics);
+	    		}
+	    		
+	    		
+	    		
 	    		
 	    		intent = new Intent(this, PostGameResultActivity.class);
 		    	intent.putExtra(PostGameResultActivity.EXTRA_LEVEL_NUMBER, levelnumber);

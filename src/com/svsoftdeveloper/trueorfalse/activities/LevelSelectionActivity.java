@@ -88,28 +88,33 @@ public class LevelSelectionActivity extends Activity implements OnClickListener{
 		switch (v.getId()) {
 	    case R.id.btnLevel1:
 	      // TODO Call second activity   	
-	        intent.putExtra("levelnumber", 1);	    	
+	        intent.putExtra("levelnumber", 0);	    	
 	        startActivity(intent);
+	        //finish();
 	        break;
 	    case R.id.btnLevel2:
 	    	// TODO Call second activity
-	    	intent.putExtra("levelnumber", 2);
+	    	intent.putExtra("levelnumber", 1);
 	    	startActivity(intent);
+	    	//finish();
 	    	break;  
 	    case R.id.btnLevel3:
 	    	// TODO Call second activity
-	    	intent.putExtra("levelnumber", 3);
+	    	intent.putExtra("levelnumber", 2);
 	    	startActivity(intent);
+	    	//finish();
 	    	break;
 	    case R.id.btnLevel4:
 	    	// TODO Call second activity
-	    	intent.putExtra("levelnumber", 4);
+	    	intent.putExtra("levelnumber", 3);
 	    	startActivity(intent);
+	    	//finish();
 	    	break;
 	    case R.id.btnLevel5:
 	    	// TODO Call second activity
-	    	intent.putExtra("levelnumber", 5);
+	    	intent.putExtra("levelnumber", 4);
 	    	startActivity(intent);
+	    	//finish();
 	    	break;
 	    default:
 	      break;

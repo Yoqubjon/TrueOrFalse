@@ -175,7 +175,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
   	
   	public void fillStatisticsTable(){
   		
-  		Statistics statistics = new Statistics(1, 70.8f, 85.3f, 0.0f, 0.0f, 0.0f, 1, 1, 0, 0, 0);
+  		Statistics statistics = new Statistics(1, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0, 0, 0, 0, 0);
   		addStatistics(statistics);
   	}
   	
