@@ -26,15 +26,26 @@ public final class R {
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
         public static final int btn_horizontal_margin=0x7f060002;
+        public static final int button_height=0x7f060004;
+        /**  Default screen margins, per the Android Design guidelines. 
+ Default screen margins, per the Android Design guidelines. 
+ Default screen margins, per the Android Design guidelines. 
+         */
+        public static final int button_width=0x7f060003;
     }
     public static final class drawable {
         public static final int back=0x7f020000;
         public static final int background=0x7f020001;
         public static final int grey_wash_wall=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int ic_star=0x7f020004;
-        public static final int ic_wrong=0x7f020005;
-        public static final int truefalselogo_m=0x7f020006;
+        public static final int ic_action_sound_disable=0x7f020003;
+        public static final int ic_action_sound_enable=0x7f020004;
+        public static final int ic_clear=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int ic_sound_off=0x7f020007;
+        public static final int ic_sound_on=0x7f020008;
+        public static final int ic_star=0x7f020009;
+        public static final int ic_wrong=0x7f02000a;
+        public static final int truefalselogo_m=0x7f02000b;
     }
     public static final class id {
         public static final int LinearLayout=0x7f0a0008;
@@ -57,6 +68,8 @@ public final class R {
         public static final int frgmCont=0x7f0a0007;
         public static final int imageView1=0x7f0a0000;
         public static final int imageView2=0x7f0a0004;
+        public static final int menu_sound_off=0x7f0a002c;
+        public static final int menu_sound_on=0x7f0a002b;
         public static final int textViewAnswerTitle=0x7f0a0002;
         public static final int textViewCorrect=0x7f0a0001;
         public static final int textViewExplanationText=0x7f0a0006;
@@ -92,9 +105,14 @@ public final class R {
     }
     public static final class menu {
         public static final int main=0x7f090000;
+        public static final int main_settings=0x7f090001;
+        public static final int sound_on_off=0x7f090002;
     }
     public static final class raw {
-        public static final int questions_list=0x7f040000;
+        public static final int aplause=0x7f040000;
+        public static final int correct_answer=0x7f040001;
+        public static final int questions_list=0x7f040002;
+        public static final int wrong_answer=0x7f040003;
     }
     public static final class string {
         public static final int Level_1=0x7f070006;
@@ -116,6 +134,7 @@ public final class R {
         public static final int number_of_correct_answers=0x7f070013;
         public static final int result_percents=0x7f070014;
         public static final int results_header=0x7f07000b;
+        public static final int sound_on_off=0x7f070015;
         public static final int truth_button=0x7f070010;
         public static final int your_result=0x7f070012;
     }

@@ -16,8 +16,8 @@
 
         <Button
             android:id="@+id/btnLevel1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/button_width"
+        	android:layout_height="@dimen/button_height"
             android:text="@string/Level_1" />
     </LinearLayout>
 
@@ -30,8 +30,8 @@
 
         <Button
             android:id="@+id/btnLevel2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/button_width"
+        	android:layout_height="@dimen/button_height"
             android:text="@string/Level_2" />
     </LinearLayout>
 
@@ -44,8 +44,8 @@
 
         <Button
             android:id="@+id/btnLevel3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/button_width"
+        	android:layout_height="@dimen/button_height"
             android:text="@string/Level_3" />
     </LinearLayout>
 
@@ -58,8 +58,8 @@
 
         <Button
             android:id="@+id/btnLevel4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/button_width"
+        	android:layout_height="@dimen/button_height"
             android:text="@string/Level_4" />
     </LinearLayout>
 

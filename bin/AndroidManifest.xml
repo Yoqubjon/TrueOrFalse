@@ -3,6 +3,12 @@
     package="com.svsoftdeveloper.trueorfalse"
     android:versionCode="1"
     android:versionName="1.0" >
+    
+    <supports-screens android:smallScreens="true" 
+          android:normalScreens="true" 
+          android:largeScreens="true"
+          android:xlargeScreens="true"
+          android:anyDensity="true" />
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -40,6 +46,8 @@
 
         </activity>
         
+        
     </application>
+    
 
 </manifest>

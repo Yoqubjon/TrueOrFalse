@@ -8,6 +8,9 @@ import com.svsoftdeveloper.trueorfalse.activities.db.Statistics;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.media.SoundPool.OnLoadCompleteListener;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -17,12 +20,18 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class PostGameResultActivity extends Activity implements OnClickListener{
+public class PostGameResultActivity extends Activity implements OnClickListener, OnLoadCompleteListener{
 	
 	public static final String EXTRA_LEVEL_NUMBER = "level_number";
 	public static final String EXTRA_RESULT_PERCENTS = "result_percents";
 	
 	private static final float LEVEL_ACCEPTANCE_PERCENTAGE = 70.0f;
+	
+	final int MAX_STREAMS = 5;
+	private SoundPool soundPool;
+
+	private int soundIdCongratulations;
+	private int soundIdDisappointment;
 	
 	TextView txtLevelMark;
 	TextView txtResultPercents;
@@ -34,7 +43,6 @@ public class PostGameResultActivity extends Activity implements OnClickListener{
 	private int levelNumber;
 	private int availableLevel;
 	
-	private Question question;
 	private Statistics statistics;
 	
 	private DatabaseHandler db;
@@ -55,6 +63,10 @@ public class PostGameResultActivity extends Activity implements OnClickListener{
         txtLevelMark = (TextView) findViewById(R.id.txtlevelMark);
         txtResultPercents = (TextView) findViewById(R.id.txtResultPercents);
         
+        soundPool = new SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
+        soundPool.setOnLoadCompleteListener(this);
+		soundIdCongratulations = soundPool.load(this, R.raw.aplause, 1);
+		soundIdDisappointment = soundPool.load(this, R.raw.wrong_answer, 1); 
         
         levelNumber = getIntent().getIntExtra(EXTRA_LEVEL_NUMBER, 0);
         availableLevel = levelNumber;
@@ -67,6 +79,8 @@ public class PostGameResultActivity extends Activity implements OnClickListener{
         
         
         if(resultPercentage < LEVEL_ACCEPTANCE_PERCENTAGE){
+        	
+        	//soundPool.play(soundIdDisappointment, 1, 1, 0, 0, 1);
         	
         	txtLevelMark.setText("Попробуйте ещё раз!");
         	if(levelNumber == 0){
@@ -86,6 +100,8 @@ public class PostGameResultActivity extends Activity implements OnClickListener{
         	}
         }
         else{
+        	
+        	//soundPool.play(soundIdCongratulations, 1, 1, 0, 0, 1);
         	
         	txtLevelMark.setText("Новый уровень!");
         	
@@ -111,14 +127,12 @@ public class PostGameResultActivity extends Activity implements OnClickListener{
         	
         }
         
-        
-        
         db = new DatabaseHandler(this);
         statistics = db.getStatistics(1);
-        
-        
 
     }
+	
+
 	
 	@Override
 	public void onBackPressed() {
@@ -146,7 +160,6 @@ public class PostGameResultActivity extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		
 		Intent intent;
 		switch (v.getId()) {
 	    case R.id.btnAvailableLevel:
@@ -174,6 +187,12 @@ public class PostGameResultActivity extends Activity implements OnClickListener{
 	    default:
 	      break;
 	    }
+		
+	}
+
+	@Override
+	public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+		// TODO Auto-generated method stub
 		
 	}
 
