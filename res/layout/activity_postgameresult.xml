@@ -30,7 +30,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/txtlevel1mark"
+            android:id="@+id/txtlevelMark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/your_result" />
@@ -50,7 +50,7 @@
             android:layout_gravity="center" >
 
             <TextView
-                android:id="@+id/textViewResultPercents"
+                android:id="@+id/txtResultPercents"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

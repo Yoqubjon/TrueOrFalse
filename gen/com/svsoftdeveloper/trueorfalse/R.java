@@ -61,7 +61,6 @@ public final class R {
         public static final int textViewCorrect=0x7f0a0001;
         public static final int textViewExplanationText=0x7f0a0006;
         public static final int textViewExplanationTitle=0x7f0a0005;
-        public static final int textViewResultPercents=0x7f0a0023;
         public static final int textViewWrong=0x7f0a0003;
         public static final int txtAverageResult=0x7f0a0013;
         public static final int txtLevel1percentage=0x7f0a0016;
@@ -69,8 +68,8 @@ public final class R {
         public static final int txtLevel3percentage=0x7f0a001c;
         public static final int txtLevel4percentage=0x7f0a001f;
         public static final int txtLevel5percentage=0x7f0a0022;
+        public static final int txtResultPercents=0x7f0a0023;
         public static final int txtResultsHeader=0x7f0a0012;
-        public static final int txtlevel1mark=0x7f0a0014;
         public static final int txtlevel1number=0x7f0a0015;
         public static final int txtlevel2mark=0x7f0a0017;
         public static final int txtlevel2number=0x7f0a0018;
@@ -80,6 +79,7 @@ public final class R {
         public static final int txtlevel4number=0x7f0a001e;
         public static final int txtlevel5mark=0x7f0a0020;
         public static final int txtlevel5number=0x7f0a0021;
+        public static final int txtlevelMark=0x7f0a0014;
     }
     public static final class layout {
         public static final int activity_game=0x7f030000;

@@ -132,7 +132,7 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 		questionsList = db.getNewQuestions();
 		Toast.makeText(this, "Not used questions: " + Integer.toString(questionsList.size()), Toast.LENGTH_SHORT).show();
 		
-		if(questionsList == null){
+		if(questionsList.size() < 1){
 			questionsList = db.getAllQuestions();
 			
 		}
@@ -190,6 +190,7 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 	@Override
 	public void nextButtonEvent(int s) {
 		// TODO Auto-generated method stub
+		Intent intent;
 		switch (s) {
 	    case FragmentNext.NEXT_QUESTION:
 		      // TODO Call second activity
@@ -201,7 +202,12 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 	    		showQuestion();
 	    	}
 	    	else{
-	    		levelPercentage = (float) numberCorrectAnswers/(numberCorrectAnswers + numberWrongAnswers);
+	    		levelPercentage = ((float) numberCorrectAnswers/(numberCorrectAnswers + numberWrongAnswers)) * 100;
+	    		
+	    		intent = new Intent(this, PostGameResultActivity.class);
+		    	intent.putExtra(PostGameResultActivity.EXTRA_LEVEL_NUMBER, levelnumber);
+		    	intent.putExtra(PostGameResultActivity.EXTRA_RESULT_PERCENTS, levelPercentage);
+		    	startActivity(intent);
 	    	}
 		        break;
 	    default:
