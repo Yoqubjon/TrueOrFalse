@@ -55,6 +55,7 @@ public class LevelSelectionActivity extends Activity implements OnClickListener{
 	        }
 	        else{
 	        	btnLevel2.setEnabled(false);
+	        	btnLevel2.setBackgroundResource(R.drawable.btn_yellow_pressed);
 	        }
 	        
 	        if(statistics.getL2Done() != 0){
@@ -62,6 +63,7 @@ public class LevelSelectionActivity extends Activity implements OnClickListener{
 	        }
 	        else{
 	        	btnLevel3.setEnabled(false);
+	        	btnLevel3.setBackgroundResource(R.drawable.btn_yellow_pressed);
 	        }
 	        
 	        if(statistics.getL3Done() != 0){
@@ -69,6 +71,7 @@ public class LevelSelectionActivity extends Activity implements OnClickListener{
 	        }
 	        else{
 	        	btnLevel4.setEnabled(false);
+	        	btnLevel4.setBackgroundResource(R.drawable.btn_yellow_pressed);
 	        }
 	        
 	        if(statistics.getL4Done() != 0){
@@ -76,6 +79,7 @@ public class LevelSelectionActivity extends Activity implements OnClickListener{
 	        }
 	        else{
 	        	btnLevel5.setEnabled(false);
+	        	btnLevel5.setBackgroundResource(R.drawable.btn_yellow_pressed);
 	        }
 	    }
 	 

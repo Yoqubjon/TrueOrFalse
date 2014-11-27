@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<previews>
+
+    <preview
+        name="Diff screens"
+        activity="com.svsoftdeveloper.trueorfalse.activities.LevelSelectionActivity"
+        config="layout-ldltr-sw320dp-w320dp-h533dp-normal-long-port-notnight-hdpi-finger-keyssoft-nokeys-navexposed-trackball-800x480-v20"
+        device="3.7&quot; WVGA (Nexus One)"
+        devicestate="Portrait"
+        target="Android L (Preview)"
+        theme="@style/AppTheme" >
+    </preview>
+
+</previews>
