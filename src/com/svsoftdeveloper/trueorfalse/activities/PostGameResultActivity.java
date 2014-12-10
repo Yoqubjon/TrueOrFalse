@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class PostGameResultActivity extends Activity implements OnClickListener, OnLoadCompleteListener{
@@ -38,6 +39,7 @@ public class PostGameResultActivity extends Activity implements OnClickListener,
 	Button btnAvailableLevel;
 	Button btnGoToResults;
 	Button btnGoToMenu;
+	ImageView imageViewEmotion;
 	
 	private float resultPercentage;
 	private int levelNumber;
@@ -63,6 +65,8 @@ public class PostGameResultActivity extends Activity implements OnClickListener,
         txtLevelMark = (TextView) findViewById(R.id.txtlevelMark);
         txtResultPercents = (TextView) findViewById(R.id.txtResultPercents);
         
+        imageViewEmotion = (ImageView) findViewById(R.id.imageView1);
+        
         soundPool = new SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
         soundPool.setOnLoadCompleteListener(this);
 		soundIdCongratulations = soundPool.load(this, R.raw.aplause, 1);
@@ -83,6 +87,7 @@ public class PostGameResultActivity extends Activity implements OnClickListener,
         	//soundPool.play(soundIdDisappointment, 1, 1, 0, 0, 1);
         	
         	txtLevelMark.setText("Попробуйте ещё раз!");
+        	imageViewEmotion.setImageResource(R.drawable.lost_emoticon_small);
         	if(levelNumber == 0){
         		btnAvailableLevel.setText("Уровень 1");
             }
@@ -104,7 +109,7 @@ public class PostGameResultActivity extends Activity implements OnClickListener,
         	//soundPool.play(soundIdCongratulations, 1, 1, 0, 0, 1);
         	
         	txtLevelMark.setText("Новый уровень!");
-        	
+        	imageViewEmotion.setImageResource(R.drawable.salute);
         	if(levelNumber == 0){
         		availableLevel = 1;
         		btnAvailableLevel.setText("Уровень 2");

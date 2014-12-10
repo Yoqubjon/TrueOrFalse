@@ -52,8 +52,13 @@ public final class R {
         public static final int ic_star=0x7f02000d;
         public static final int ic_wrong=0x7f02000e;
         public static final int ic_wrong_answer=0x7f02000f;
-        public static final int truefalselogo_dimensions=0x7f020010;
-        public static final int truefalselogo_m=0x7f020011;
+        public static final int logo=0x7f020010;
+        public static final int lost_emoticon_small=0x7f020011;
+        public static final int salute=0x7f020012;
+        public static final int truefalselogo_dimensions=0x7f020013;
+        public static final int truefalselogo_m=0x7f020014;
+        public static final int yellow_normal=0x7f020015;
+        public static final int yellow_pressed=0x7f020016;
     }
     public static final class id {
         public static final int LinearLayout=0x7f0a0008;

@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical" >
@@ -17,15 +18,18 @@
         <Button
             android:id="@+id/btnLevel1"
             android:layout_width="@dimen/button_width"
-        	android:layout_height="@dimen/button_height"
-        	android:background="@drawable/button_yellow_background"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button_yellow_background"
             android:text="@string/Level_1"
             android:textColor="@color/light_grey" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical" >
@@ -33,15 +37,18 @@
         <Button
             android:id="@+id/btnLevel2"
             android:layout_width="@dimen/button_width"
-        	android:layout_height="@dimen/button_height"
-        	android:background="@drawable/button_yellow_background"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button_yellow_background"
             android:text="@string/Level_2"
             android:textColor="@color/light_grey" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical" >
@@ -49,10 +56,12 @@
         <Button
             android:id="@+id/btnLevel3"
             android:layout_width="@dimen/button_width"
-        	android:layout_height="@dimen/button_height"
-        	android:background="@drawable/button_yellow_background"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button_yellow_background"
             android:text="@string/Level_3"
             android:textColor="@color/light_grey" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -65,7 +74,7 @@
         <Button
             android:id="@+id/btnLevel4"
             android:layout_width="@dimen/button_width"
-        	android:layout_height="@dimen/button_height"
+        	android:layout_height="wrap_content"
         	android:background="@drawable/button_yellow_background"
             android:text="@string/Level_4"
             android:textColor="@color/light_grey" />
@@ -81,7 +90,7 @@
         <Button
             android:id="@+id/btnLevel5"
             android:layout_width="@dimen/button_width"
-        	android:layout_height="@dimen/button_height"
+        	android:layout_height="wrap_content"
         	android:background="@drawable/button_yellow_background"
             android:text="@string/Level_5"
             android:textColor="@color/light_grey" />
