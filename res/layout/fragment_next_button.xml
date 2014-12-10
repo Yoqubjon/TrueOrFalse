@@ -9,6 +9,9 @@
         android:id="@+id/btnNext"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:text="@string/next_button" />
+        android:background="@drawable/button_dark_blue_background"
+        android:text="@string/next_button"
+        android:textColor="@color/light_grey"
+        android:textStyle="bold" />
 
 </LinearLayout>

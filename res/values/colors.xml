@@ -3,5 +3,7 @@
     <color name="light_blue">#b3e5fc</color>
     <color name="light_green">#72d572</color>
     <color name="light_grey">#fafafa</color>
+    <color name="my_red">#e53935</color>
+    <color name="my_blue">#4a148c</color>
     
 </resources>

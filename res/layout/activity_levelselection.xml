@@ -20,9 +20,10 @@
             android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/button_yellow_background"
+            android:background="@drawable/button_green_play_background"
             android:text="@string/Level_1"
-            android:textColor="@color/light_grey" />
+            android:textColor="@color/light_grey"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -39,9 +40,10 @@
             android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/button_yellow_background"
+            android:background="@drawable/button_yellow_lock_background"
             android:text="@string/Level_2"
-            android:textColor="@color/light_grey" />
+            android:textColor="@color/light_grey"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -58,9 +60,10 @@
             android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/button_yellow_background"
+            android:background="@drawable/button_yellow_lock_background"
             android:text="@string/Level_3"
-            android:textColor="@color/light_grey" />
+            android:textColor="@color/light_grey"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -74,10 +77,12 @@
         <Button
             android:id="@+id/btnLevel4"
             android:layout_width="@dimen/button_width"
-        	android:layout_height="wrap_content"
-        	android:background="@drawable/button_yellow_background"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_yellow_lock_background"
             android:text="@string/Level_4"
-            android:textColor="@color/light_grey" />
+            android:textColor="@color/light_grey"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -90,10 +95,12 @@
         <Button
             android:id="@+id/btnLevel5"
             android:layout_width="@dimen/button_width"
-        	android:layout_height="wrap_content"
-        	android:background="@drawable/button_yellow_background"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_yellow_lock_background"
             android:text="@string/Level_5"
-            android:textColor="@color/light_grey" />
+            android:textColor="@color/light_grey"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
 </LinearLayout>

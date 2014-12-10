@@ -216,7 +216,9 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 	public void showQuestion(){
 		textViewCorrect.setText(Integer.toString(numberCorrectAnswers));
         textViewWrong.setText(Integer.toString(numberWrongAnswers));
-        textViewAnswerTitle.setText("");
+        
+        textViewAnswerTitle.setTextColor(getResources().getColor(R.color.light_grey));
+        textViewAnswerTitle.setText("?");
         textViewExplanationTitle.setText("");
         textViewExplanationText.setText(question.getText());
         
@@ -227,9 +229,11 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 		textViewCorrect.setText(Integer.toString(numberCorrectAnswers));
         textViewWrong.setText(Integer.toString(numberWrongAnswers));
         if(answerResult == true){
+        	textViewAnswerTitle.setTextColor(getResources().getColor(R.color.light_green));
         	textViewAnswerTitle.setText("Верно");
         }
         else{
+        	textViewAnswerTitle.setTextColor(getResources().getColor(R.color.my_red));
         	textViewAnswerTitle.setText("Неверно");
         }
         if((question.getExplanation().length()) > 0){

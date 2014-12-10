@@ -86,6 +86,7 @@ public class PostGameResultActivity extends Activity implements OnClickListener,
         	
         	//soundPool.play(soundIdDisappointment, 1, 1, 0, 0, 1);
         	
+        	txtLevelMark.setTextColor(getResources().getColor(R.color.my_red));
         	txtLevelMark.setText("Попробуйте ещё раз!");
         	imageViewEmotion.setImageResource(R.drawable.lost_emoticon_small);
         	if(levelNumber == 0){
@@ -108,6 +109,7 @@ public class PostGameResultActivity extends Activity implements OnClickListener,
         	
         	//soundPool.play(soundIdCongratulations, 1, 1, 0, 0, 1);
         	
+        	txtLevelMark.setTextColor(getResources().getColor(R.color.light_green));
         	txtLevelMark.setText("Новый уровень!");
         	imageViewEmotion.setImageResource(R.drawable.salute);
         	if(levelNumber == 0){

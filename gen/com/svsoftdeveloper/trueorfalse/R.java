@@ -14,6 +14,8 @@ public final class R {
         public static final int light_blue=0x7f050000;
         public static final int light_green=0x7f050001;
         public static final int light_grey=0x7f050002;
+        public static final int my_blue=0x7f050004;
+        public static final int my_red=0x7f050003;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -40,25 +42,40 @@ public final class R {
         public static final int background=0x7f020001;
         public static final int btn_yellow_normal=0x7f020002;
         public static final int btn_yellow_pressed=0x7f020003;
-        public static final int button_yellow_background=0x7f020004;
-        public static final int grey_wash_wall=0x7f020005;
-        public static final int ic_action_sound_disable=0x7f020006;
-        public static final int ic_action_sound_enable=0x7f020007;
-        public static final int ic_clear=0x7f020008;
-        public static final int ic_launcher=0x7f020009;
-        public static final int ic_right_answer=0x7f02000a;
-        public static final int ic_sound_off=0x7f02000b;
-        public static final int ic_sound_on=0x7f02000c;
-        public static final int ic_star=0x7f02000d;
-        public static final int ic_wrong=0x7f02000e;
-        public static final int ic_wrong_answer=0x7f02000f;
-        public static final int logo=0x7f020010;
-        public static final int lost_emoticon_small=0x7f020011;
-        public static final int salute=0x7f020012;
-        public static final int truefalselogo_dimensions=0x7f020013;
-        public static final int truefalselogo_m=0x7f020014;
-        public static final int yellow_normal=0x7f020015;
-        public static final int yellow_pressed=0x7f020016;
+        public static final int button_dark_blue_background=0x7f020004;
+        public static final int button_green_background=0x7f020005;
+        public static final int button_green_play_background=0x7f020006;
+        public static final int button_yellow_background=0x7f020007;
+        public static final int button_yellow_lock_background=0x7f020008;
+        public static final int dark_blue_normal=0x7f020009;
+        public static final int dark_blue_pressed=0x7f02000a;
+        public static final int green_normal=0x7f02000b;
+        public static final int green_play_normal=0x7f02000c;
+        public static final int green_play_pressed=0x7f02000d;
+        public static final int green_pressed=0x7f02000e;
+        public static final int grey_wash_wall=0x7f02000f;
+        public static final int ic_action_sound_disable=0x7f020010;
+        public static final int ic_action_sound_enable=0x7f020011;
+        public static final int ic_clear=0x7f020012;
+        public static final int ic_launcher=0x7f020013;
+        public static final int ic_right_answer=0x7f020014;
+        public static final int ic_sound_off=0x7f020015;
+        public static final int ic_sound_on=0x7f020016;
+        public static final int ic_star=0x7f020017;
+        public static final int ic_wrong=0x7f020018;
+        public static final int ic_wrong_answer=0x7f020019;
+        public static final int logo=0x7f02001a;
+        public static final int lost_emoticon_small=0x7f02001b;
+        public static final int salute=0x7f02001c;
+        public static final int star=0x7f02001d;
+        public static final int truefalselogo_dimensions=0x7f02001e;
+        public static final int truefalselogo_m=0x7f02001f;
+        public static final int yellow_lock_normal=0x7f020020;
+        public static final int yellow_lock_pressed=0x7f020021;
+        public static final int yellow_normal=0x7f020022;
+        public static final int yellow_normal2=0x7f020023;
+        public static final int yellow_normalbig=0x7f020024;
+        public static final int yellow_pressed=0x7f020025;
     }
     public static final class id {
         public static final int LinearLayout=0x7f0a0008;

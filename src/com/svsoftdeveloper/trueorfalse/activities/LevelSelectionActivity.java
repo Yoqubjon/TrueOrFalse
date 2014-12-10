@@ -51,35 +51,39 @@ public class LevelSelectionActivity extends Activity implements OnClickListener{
 	        btnLevel1.setEnabled(true);
 	        
 	        if(statistics.getL1Done() != 0){
+	        	btnLevel2.setBackgroundResource(R.drawable.button_green_play_background);
 	        	btnLevel2.setEnabled(true);
 	        }
 	        else{
 	        	btnLevel2.setEnabled(false);
-	        	btnLevel2.setBackgroundResource(R.drawable.btn_yellow_pressed);
+	        	btnLevel2.setBackgroundResource(R.drawable.button_yellow_lock_background);
 	        }
 	        
 	        if(statistics.getL2Done() != 0){
+	        	btnLevel3.setBackgroundResource(R.drawable.button_green_play_background);
 	        	btnLevel3.setEnabled(true);
 	        }
 	        else{
 	        	btnLevel3.setEnabled(false);
-	        	btnLevel3.setBackgroundResource(R.drawable.btn_yellow_pressed);
+	        	btnLevel3.setBackgroundResource(R.drawable.button_yellow_lock_background);
 	        }
 	        
 	        if(statistics.getL3Done() != 0){
+	        	btnLevel4.setBackgroundResource(R.drawable.button_green_play_background);
 	        	btnLevel4.setEnabled(true);
 	        }
 	        else{
 	        	btnLevel4.setEnabled(false);
-	        	btnLevel4.setBackgroundResource(R.drawable.btn_yellow_pressed);
+	        	btnLevel4.setBackgroundResource(R.drawable.button_yellow_lock_background);
 	        }
 	        
 	        if(statistics.getL4Done() != 0){
+	        	btnLevel5.setBackgroundResource(R.drawable.button_green_play_background);
 	        	btnLevel5.setEnabled(true);
 	        }
 	        else{
 	        	btnLevel5.setEnabled(false);
-	        	btnLevel5.setBackgroundResource(R.drawable.btn_yellow_pressed);
+	        	btnLevel5.setBackgroundResource(R.drawable.button_yellow_lock_background);
 	        }
 	    }
 	 

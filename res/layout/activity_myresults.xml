@@ -17,7 +17,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/results_header"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/my_blue"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -33,7 +36,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/average_results_default"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/light_green"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -60,7 +66,10 @@
                     android:id="@+id/txtlevelMark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Level_word" />
+                    android:text="@string/Level_word"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -75,7 +84,13 @@
                     android:id="@+id/txtlevel1number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1" />
+                    android:layout_gravity="center"
+                    android:background="@drawable/star"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -90,7 +105,10 @@
                     android:id="@+id/txtLevel1percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/level_results_default" />
+                    android:text="@string/level_results_default"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -121,7 +139,11 @@
                     android:id="@+id/txtlevel2mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Level_word" />
+                    android:text="@string/Level_word"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -135,7 +157,13 @@
                     android:id="@+id/txtlevel2number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2" />
+                    android:background="@drawable/star"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -149,7 +177,11 @@
                     android:id="@+id/txtLevel2percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/level_results_default" />
+                    android:text="@string/level_results_default"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -178,7 +210,11 @@
                     android:id="@+id/txtlevel3mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Level_word" />
+                    android:text="@string/Level_word"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -192,7 +228,13 @@
                     android:id="@+id/txtlevel3number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3" />
+                    android:background="@drawable/star"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -206,7 +248,11 @@
                     android:id="@+id/txtLevel3percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/level_results_default" />
+                    android:text="@string/level_results_default"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -235,7 +281,11 @@
                     android:id="@+id/txtlevel4mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Level_word" />
+                    android:text="@string/Level_word"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -249,7 +299,13 @@
                     android:id="@+id/txtlevel4number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4" />
+                    android:background="@drawable/star"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -263,7 +319,11 @@
                     android:id="@+id/txtLevel4percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/level_results_default" />
+                    android:text="@string/level_results_default"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -292,7 +352,11 @@
                     android:id="@+id/txtlevel5mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Level_word" />
+                    android:text="@string/Level_word"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -306,7 +370,13 @@
                     android:id="@+id/txtlevel5number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5" />
+                    android:background="@drawable/star"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -320,7 +390,11 @@
                     android:id="@+id/txtLevel5percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/level_results_default" />
+                    android:text="@string/level_results_default"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
         </LinearLayout>
 
