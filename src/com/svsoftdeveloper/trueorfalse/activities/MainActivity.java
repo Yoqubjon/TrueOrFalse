@@ -14,6 +14,9 @@ import com.svsoftdeveloper.trueorfalse.activities.db.Question;
 import com.svsoftdeveloper.trueorfalse.activities.db.Statistics;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -29,6 +32,8 @@ public class MainActivity extends Activity implements OnClickListener{
 	
 	
 	final String TAG = "States";
+	
+	final int DIALOG_EXIT = 1;
 	 
 	private Button btnPlay;
 	private Button btnResults;
@@ -37,6 +42,10 @@ public class MainActivity extends Activity implements OnClickListener{
 	//Cursor cursor;
 	
 	Statistics statistics;
+	
+	AlertDialog.Builder clearHistoryDialog;
+	
+	DatabaseHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +64,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		Log.d(TAG, "Open mydatbase - successful");*/
         
 		
-		DatabaseHandler db = new DatabaseHandler(this);
+		db = new DatabaseHandler(this);
 		
 		if(db.getQuestionsCount() < 1){
 			db.fillDB();
@@ -91,13 +100,42 @@ public class MainActivity extends Activity implements OnClickListener{
 		Log.d(TAG, String.valueOf(statistics.getL4Done()));
 		Log.d(TAG, String.valueOf(statistics.getL5Done()));
 		
+		clearHistoryDialog = new AlertDialog.Builder(MainActivity.this); 
+		 
+		clearHistoryDialog.setTitle(R.string.title_clear_history);
+		clearHistoryDialog.setMessage(R.string.clear_history_text);
+		clearHistoryDialog.setIcon(android.R.drawable.ic_dialog_info);
+		 
+		clearHistoryDialog.setPositiveButton(R.string.yes_clear_history, 
+		        new DialogInterface.OnClickListener() { 
+		            public void onClick(DialogInterface dialog, int which) {
+		                // Write your code here to execute after dialog 
+		            	resetStatistic();
+		            	
+		            } 
+		        }); 
+		// Setting Negative "NO" Btn 
+		clearHistoryDialog.setNegativeButton(R.string.no_clear_history,
+		        new DialogInterface.OnClickListener() {
+		            public void onClick(DialogInterface dialog, int which) {
+		                // Write your code here to execute after dialog 
+
+		                dialog.cancel();
+		            } 
+		        }); 
+    }
+    
+
+    public void resetStatistic(){
+    	db.resetStatistics();
+    	db.resetQuestions();
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+    	getMenuInflater().inflate(R.menu.main_settings, menu);
         return true;
     }
 
@@ -106,12 +144,22 @@ public class MainActivity extends Activity implements OnClickListener{
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    	int id = item.getItemId();
+		if (id == R.id.action_clear_history) {
+			
+			// Showing Alert Dialog 
+			clearHistoryDialog.show();	
+			
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
     }
+    
+
+
+
+
+          
 
 
 	@Override

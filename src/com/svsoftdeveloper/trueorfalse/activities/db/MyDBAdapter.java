@@ -131,6 +131,7 @@ public class MyDBAdapter {
 		}
 		//--------------------------------//
 		
+		
 		public long addMessageToDB(Question question) {
 			
 			 //SQLiteDatabase db = this.getWritableDatabase();

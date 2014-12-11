@@ -22,6 +22,11 @@
     <string name="your_result">Ваш результат</string>
     <string name="number_of_correct_answers">"Правильных ответов: "</string>
     <string name="result_percents">Правильных ответов: 0.0 %</string>
-     <string name="sound_on_off">Звук</string>
+    <string name="sound_on_off">Звук</string>
+    <string name="action_clear_history">Начать сначала</string>
+    <string name="yes_clear_history">Да</string>
+	<string name="no_clear_history">Нет</string>
+	<string name="title_clear_history">Удаление статистики</string>
+	<string name="clear_history_text">Вы действительно хотите удалить все данные?</string>
 
 </resources>

@@ -79,6 +79,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private SQLiteDatabase myDB;
 	
 	
+	
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         dbContext = context;
@@ -102,6 +103,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // Create tables again 
         onCreate(db);
     } 
+    
+    
     
     public DatabaseHandler open() throws SQLException {
 
@@ -358,7 +361,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
   
         // updating row 
         return db.update(TABLE_STATISTICS, values, KEY_STATISTICS_ID + " = ?", new String[] { String.valueOf(statistics.getId())});
-    } 
+    }
+    
+    //Reseting statistic
+    public void resetStatistics(){
+    	Statistics statistics = new Statistics(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    	updateStatistics(statistics);
+    }
+    
+    public void resetQuestions(){
+    	List<Question> questionList = getAllQuestions();
+    	for(int i = 0; i < questionList.size(); i++){
+    		questionList.get(i).setUsed("0");
+    		updateQuestion(questionList.get(i));
+    	}
+    }
     
     // Getting statistic Count 
     public int getStatisticsCount() {
