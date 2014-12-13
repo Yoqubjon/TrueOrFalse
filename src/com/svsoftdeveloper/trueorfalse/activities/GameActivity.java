@@ -37,15 +37,9 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 	
 	SharedPreferences mSoundSettings;
 	
-	private static final int NUMBER_OF_QUESTIONS_LEVEL_1 = 3;
-	private static final int NUMBER_OF_QUESTIONS_LEVEL_2 = 4;
-	private static final int NUMBER_OF_QUESTIONS_LEVEL_3 = 5;
-	private static final int NUMBER_OF_QUESTIONS_LEVEL_4 = 6;
-	private static final int NUMBER_OF_QUESTIONS_LEVEL_5 = 7;
-	
 	private static final float LEVEL_ACCEPTANCE_PERCENTAGE = 70.0f;
 	
-	private static final int[] NUMBER_OF_QUESTIONS_IN_LEVEL = {3, 4, 5, 6, 7};
+	private static final int[] NUMBER_OF_QUESTIONS_IN_LEVEL = {5, 6, 7, 8, 9};
 	
 	private int numberCorrectAnswers;
 	private int numberWrongAnswers;
@@ -102,8 +96,7 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
         fTrans.commit();
         
         Intent intent = getIntent();      
-        levelnumber = (intent.getIntExtra("levelnumber", 1));        
-        //Toast.makeText(this, "Level number: " + Integer.toString(levelnumber), Toast.LENGTH_SHORT).show();
+        levelnumber = (intent.getIntExtra("levelnumber", 1));
         
         numberCorrectAnswers = 0;
         numberWrongAnswers = 0;
@@ -153,7 +146,6 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 			menuSoundOff.setEnabled(true);
 			menuSoundOff.setVisible(true);
 		}
-		//Toast.makeText(this, "Sound on/off: " + Integer.toString(tmpSoundOnOff), Toast.LENGTH_SHORT).show();
 	}
 	
 	
@@ -251,13 +243,11 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 		Question question = null;
 		
 		questionsList = db.getNewQuestions();
-		//Toast.makeText(this, "Not used questions: " + Integer.toString(questionsList.size()), Toast.LENGTH_SHORT).show();
 		
 		if(questionsList.size() < 1){
 			questionsList = db.getAllQuestions();
 			
 		}
-		
 		
 		question = questionsList.get(rand.nextInt(questionsList.size()));
 		
@@ -317,14 +307,6 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 	    default:
 	      break;
 	    }
-		/*
-		fragmentNext = getFragmentManager().findFragmentById(R.id.frgmCont);
-		if(currentQuestionNumber >= NUMBER_OF_QUESTIONS_IN_LEVEL[levelnumber]){
-		    ((TextView) fragmentNext.getView().findViewById(R.id.btnNext)).setText("Результаты");
-		}
-		else{
-			((TextView) fragmentNext.getView().findViewById(R.id.btnNext)).setText("Следующий");
-		}*/
 	}
 	
 	
@@ -379,10 +361,7 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 	    			}
 	    			db.updateStatistics(statistics);
 	    		}
-	    		
-	    		
-	    		
-	    		
+
 	    		intent = new Intent(this, PostGameResultActivity.class);
 		    	intent.putExtra(PostGameResultActivity.EXTRA_LEVEL_NUMBER, levelnumber);
 		    	intent.putExtra(PostGameResultActivity.EXTRA_RESULT_PERCENTS, levelPercentage);
@@ -401,26 +380,3 @@ public class GameActivity extends Activity implements onSomeEventListener, onNex
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-questionsList = db.getNewQuestions();
-question = questionsList.get(0);
-Toast.makeText(this, "Level number: " + Integer.toString(questionsList.size()), Toast.LENGTH_SHORT).show();
-// Min + (int)(Math.random() * ((Max - Min) + 1)) - original
-// (int)(Math.random() * (questionsList.size() + 1))
-Random rand = new Random();
-//rand.nextInt(questionsList.size());
-//Toast.makeText(this, "Level number: " + Integer.toString(rand.nextInt(questionsList.size()+1)), Toast.LENGTH_SHORT).show();
-Toast.makeText(this, "Level number: " + Integer.toString((int)(Math.random() * (questionsList.size()))), Toast.LENGTH_SHORT).show();
-*/

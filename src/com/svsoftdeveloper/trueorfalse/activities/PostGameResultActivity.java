@@ -77,14 +77,11 @@ public class PostGameResultActivity extends Activity implements OnClickListener,
         
         resultPercentage = getIntent().getFloatExtra(EXTRA_RESULT_PERCENTS, (float) 0.0);
         
-        //txtResultPercents.setText("Правильных ответов: " +  Float.toString(resultPercentage) + " %");
-        
         txtResultPercents.setText("Правильных ответов: " +  Float.toString((Math.round(10*((resultPercentage))))/10.0f) + " %");
         
         
         if(resultPercentage < LEVEL_ACCEPTANCE_PERCENTAGE){
         	
-        	//soundPool.play(soundIdDisappointment, 1, 1, 0, 0, 1);
         	
         	txtLevelMark.setTextColor(getResources().getColor(R.color.my_red));
         	txtLevelMark.setText("Попробуйте ещё раз!");
